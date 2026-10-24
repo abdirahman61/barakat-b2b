@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barakat | Global B2B Trade</title>
+    <meta
+      name="description"
+      content="Barakat connects suppliers and buyers across international markets with premium B2B trade solutions."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #050b14;
+        --bg-2: #0a1424;
+        --bg-3: #0f1d31;
+        --panel: rgba(17, 27, 42, 0.9);
+        --panel-2: rgba(255, 255, 255, 0.03);
+        --line: rgba(255, 255, 255, 0.1);
+        --text: #edf3ff;
+        --muted: #9aa9be;
+        --blue: #1f8dff;
+        --blue-2: #6cb7ff;
+        --cyan: #53d4ff;
+        --white: #ffffff;
+        --shadow: 0 20px 80px rgba(8, 18, 32, 0.65);
+        --radius: 22px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(31, 141, 255, 0.18), transparent 34%),
+          radial-gradient(circle at bottom right, rgba(83, 212, 255, 0.08), transparent 28%),
+          linear-gradient(180deg, #030914 0%, #07111d 100%);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      button,
+      input,
+      select,
+      textarea {
+        font: inherit;
+      }
+
+      .container {
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .section {
+        padding: 110px 0;
+      }
+
+      .section-header {
+        text-align: center;
+        max-width: 780px;
+        margin: 0 auto 52px;
+      }
+
+      .kicker {
+        display: inline-block;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-size: 11px;
+        color: var(--blue-2);
+        font-weight: 700;
+        margin-bottom: 14px;
+      }
+
+      h1, h2, h3, h4 {
+        line-height: 1.08;
+        letter-spacing: -0.05em;
+      }
+
+      h2 {
+        font-size: clamp(2.1rem, 3vw, 3.3rem);
+      }
+
+      p {
+        color: var(--muted);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 52px;
+        padding: 0 22px;
+        border-radius: 14px;
+        border: 1px solid transparent;
+        font-weight: 700;
+        transition: all 0.25s ease;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, var(--blue), var(--cyan));
+        color: #021522;
+        box-shadow: 0 18px 42px rgba(31, 141, 255, 0.35);
+      }
+
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.03);
+        border-color: rgba(255, 255, 255, 0.09);
+        color: var(--text);
+      }
+
+      .btn-light {
+        background: rgba(255, 255, 255, 0.06);
+        border-color: rgba(255, 255, 255, 0.08);
+        color: var(--text);
+      }
+
+      .header {
+        position: sticky;
+        top: 0;
+        background: rgba(4, 11, 18, 0.75);
+        border-bottom: 1px solid var(--line);
+        backdrop-filter: blur(12px);
+        z-index: 100;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 82px;
+        gap: 24px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .brand-mark {
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, var(--blue), var(--cyan));
+        color: #031217;
+        font-weight: 800;
+        font-size: 1.15rem;
+      }
+
+      .brand-text {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.1;
+      }
+
+      .brand-text strong {
+        font-size: 1.04rem;
+      }
+
+      .brand-text span {
+        font-size: 0.68rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        color: var(--muted);
+      }
+
+      .nav-links a {
+        transition: color 0.2s ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--text);
+      }
+
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .menu-toggle {
+        display: none;
+        width: 46px;
+        height: 46px;
+        border-radius: 12px;
+        background: rgba(255,255,255,0.03);
+        border: 1px solid var(--line);
+        color: var(--text);
+        font-size: 1.3rem;
+      }
+
+      .hero {
+        padding: 76px 0 68px;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.12fr 0.88fr;
+        align-items: center;
+        gap: 52px;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(2.9rem, 5vw, 5.2rem);
+        line-height: 0.96;
+        letter-spacing: -0.07em;
+        margin-bottom: 18px;
+      }
+
+      .hero-copy .subtitle {
+        max-width: 620px;
+        font-size: 1.08rem;
+        color: var(--muted);
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 30px;
+      }
+
+      .hero-metrics {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px;
+        margin-top: 38px;
+      }
+
+      .metric {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .metric strong {
+        font-size: 1.75rem;
+        letter-spacing: -0.05em;
+      }
+
+      .metric span {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .hero-card-wrap {
+        position: relative;
+      }
+
+      .hero-card {
+        position: relative;
+        background: linear-gradient(180deg, rgba(15, 29, 49, 0.96), rgba(9, 17, 28, 0.96));
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        padding: 30px 26px;
+        box-shadow: var(--shadow);
+      }
+
+      .hero-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 28px;
+        background: linear-gradient(135deg, rgba(31, 141, 255, 0.1), rgba(83, 212, 255, 0.02));
+        pointer-events: none;
+      }
+
+      .mini-panel {
+        position: relative;
+        z-index: 1;
+        background: rgba(255,255,255,0.03);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 18px 20px;
+        margin-bottom: 20px;
+      }
+
+      .mini-panel .label {
+        display: block;
+        font-size: 0.74rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .mini-panel strong {
+        display: block;
+        font-size: 1.3rem;
+        margin-bottom: 3px;
+      }
+
+      .mini-panel small {
+        color: var(--blue-2);
+      }
+
+      .stats-grid {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        margin-bottom: 20px;
+      }
+
+      .stat-box {
+        background: rgba(255,255,255,0.025);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 18px 16px;
+      }
+
+      .stat-box .num {
+        display: block;
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 4px;
+      }
+
+      .stat-box .txt {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .feature-list {
+        position: relative;
+        z-index: 1;
+        list-style: none;
+        display: grid;
+        gap: 12px;
+      }
+
+      .feature-list li {
+        position: relative;
+        padding-left: 28px;
+        color: var(--text);
+      }
+
+      .feature-list li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: var(--blue-2);
+        font-weight: 800;
+      }
+
+      .logos {
+        padding: 6px 0 0;
+      }
+
+      .logos-box {
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        padding: 22px 0;
+      }
+
+      .logos-label {
+        text-align: center;
+        color: var(--muted);
+        margin-bottom: 18px;
+        font-size: 0.9rem;
+      }
+
+      .logo-strip {
+        display: grid;
+        grid-template-columns: repeat(7, minmax(120px, 1fr));
+        gap: 12px;
+      }
+
+      .logo-strip span {
+        display: grid;
+        place-items: center;
+        min-height: 68px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: rgba(255,255,255,0.02);
+        color: #dfeaff;
+        font-weight: 600;
+      }
+
+      .about-grid,
+      .card-grid,
+      .process-grid,
+      .testimonial-grid,
+      .product-grid {
+        display: grid;
+        gap: 24px;
+      }
+
+      .about-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .info-card,
+      .product-card,
+      .step-card,
+      .quote-card,
+      .testimonial {
+        background: rgba(255,255,255,0.02);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 28px 22px;
+      }
+
+      .icon-box {
+        width: 56px;
+        height: 56px;
+        border-radius: 16px;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, rgba(31,141,255,0.16), rgba(83,212,255,0.08));
+        font-size: 1.7rem;
+        margin-bottom: 20px;
+      }
+
+      .info-card h3,
+      .product-card h3,
+      .step-card h3 {
+        margin-bottom: 12px;
+        font-size: 1.35rem;
+      }
+
+      .info-card p,
+      .product-card p,
+      .step-card p {
+        color: var(--muted);
+      }
+
+      .alt {
+        background: rgba(255,255,255,0.015);
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .market-wrap {
+        display: grid;
+        grid-template-columns: 0.95fr 1.05fr;
+        align-items: center;
+        gap: 42px;
+      }
+
+      .market-map {
+        position: relative;
+        min-height: 460px;
+        border-radius: 30px;
+        background:
+          radial-gradient(circle at center, rgba(31,141,255,0.12), transparent 32%),
+          linear-gradient(180deg, rgba(11, 27, 42, 0.96), rgba(8, 17, 28, 0.96));
+        border: 1px solid var(--line);
+        overflow: hidden;
+      }
+
+      .market-map::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+        background-size: 32px 32px;
+        mask-image: radial-gradient(circle at center, black 60%, transparent 100%);
+      }
+
+      .map-node {
+        position: absolute;
+        padding: 10px 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(83,212,255,0.38);
+        background: rgba(31,141,255,0.12);
+        color: #dfeeff;
+        font-weight: 600;
+        box-shadow: 0 20px 30px rgba(0,0,0,0.22);
+      }
+
+      .node-1 { top: 16%; left: 20%; }
+      .node-2 { top: 38%; left: 10%; }
+      .node-3 { top: 24%; right: 18%; }
+      .node-4 { bottom: 18%; left: 34%; }
+      .node-5 { bottom: 16%; right: 16%; }
+
+      .process-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .step-number {
+        display: inline-flex;
+        width: 52px;
+        height: 52px;
+        border-radius: 14px;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        background: linear-gradient(135deg, rgba(31,141,255,0.18), rgba(83,212,255,0.1));
+        color: var(--blue-2);
+        margin-bottom: 18px;
+      }
+
+      .testimonial-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .testimonial {
+        font-size: 1.03rem;
+        line-height: 1.8;
+      }
+
+      .testimonial footer {
+        margin-top: 18px;
+        color: var(--blue-2);
+        font-weight: 700;
+      }
+
+      .cta-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 22px;
+        background: linear-gradient(135deg, rgba(31,141,255,0.12), rgba(83,212,255,0.08));
+        border: 1px solid rgba(83,212,255,0.25);
+        border-radius: 28px;
+        padding: 42px 32px;
+      }
+
+      .cta-box h2 {
+        font-size: clamp(2rem, 3vw, 3rem);
+      }
+
+      .footer {
+        padding: 32px 0 42px;
+        border-top: 1px solid var(--line);
+        background: rgba(3, 9, 17, 0.7);
+      }
+
+      .footer-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      .footer-links {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 18px;
+        color: var(--muted);
+      }
+
+      .footer-meta {
+        color: var(--muted);
+      }
+
+      .quote-wrap {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 30px;
+        align-items: start;
+      }
+
+      .quote-card {
+        background: rgba(255,255,255,0.025);
+      }
+
+      .quote-list {
+        list-style: none;
+        display: grid;
+        gap: 12px;
+        margin-top: 20px;
+      }
+
+      .quote-list li {
+        color: var(--text);
+        padding-left: 24px;
+        position: relative;
+      }
+
+      .quote-list li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--blue-2);
+        font-size: 1.7rem;
+        line-height: 1;
+      }
+
+      .contact-form {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .field.full {
+        grid-column: 1 / -1;
+      }
+
+      .field label {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .field input,
+      .field select,
+      .field textarea {
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.02);
+        color: var(--text);
+        border-radius: 12px;
+        min-height: 52px;
+        padding: 0 14px;
+        outline: none;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .field textarea {
+        min-height: 120px;
+        resize: vertical;
+        padding: 14px;
+      }
+
+      .field input:focus,
+      .field select:focus,
+      .field textarea:focus {
+        border-color: rgba(83,212,255,0.45);
+        box-shadow: 0 0 0 3px rgba(83,212,255,0.12);
+      }
+
+      .contact-form .btn {
+        grid-column: 1 / -1;
+        justify-self: start;
+      }
+
+      .whatsapp-float {
+        position: fixed;
+        right: 22px;
+        bottom: 22px;
+        width: 62px;
+        height: 62px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, #2ee56d, #1bb866);
+        color: white;
+        box-shadow: 0 18px 30px rgba(29, 184, 102, 0.32);
+        z-index: 120;
+        font-size: 1.7rem;
+      }
+
+      @media (max-width: 980px) {
+        .hero-grid,
+        .market-wrap,
+        .quote-wrap {
+          grid-template-columns: 1fr;
+        }
+
+        .about-grid,
+        .product-grid,
+        .process-grid,
+        .testimonial-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .cta-box {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .menu-toggle {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .nav-links {
+          position: absolute;
+          top: 82px;
+          left: 16px;
+          right: 16px;
+          display: none;
+          flex-direction: column;
+          align-items: flex-start;
+          background: rgba(4,11,18,0.97);
+          border: 1px solid var(--line);
+          border-radius: 18px;
+          padding: 18px 20px;
+          box-shadow: var(--shadow);
+        }
+
+        .nav-links.open {
+          display: flex;
+        }
+
+        .nav-actions .btn {
+          display: none;
+        }
+
+        .hero {
+          padding-top: 52px;
+        }
+
+        .hero-actions {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .hero-metrics {
+          flex-direction: column;
+          gap: 18px;
+        }
+
+        .logo-strip,
+        .about-grid,
+        .product-grid,
+        .process-grid,
+        .testimonial-grid,
+        .contact-form {
+          grid-template-columns: 1fr;
+        }
+
+        .section {
+          padding: 86px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container nav">
+        <a href="#top" class="brand" aria-label="Barakat home">
+          <span class="brand-mark">B</span>
+          <span class="brand-text">
+            <strong>Barakat</strong>
+            <span>Global Trade</span>
+          </span>
+        </a>
+
+        <nav class="nav-links" id="navMenu">
+          <a href="#about">About</a>
+          <a href="#products">Products</a>
+          <a href="#markets">Markets</a>
+          <a href="#process">Process</a>
+          <a href="#quote">Get Quote</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="#quote" class="btn btn-secondary">Request Quote</a>
+          <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="kicker">From Global Suppliers to African Markets</span>
+            <h1>Powering smarter B2B trade worldwide.</h1>
+            <p class="subtitle">
+              Barakat connects trusted manufacturers, exporters, and commercial partners
+              across international markets with reliable sourcing, secure logistics,
+              and efficient trade execution.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#quote" class="btn btn-primary">Request a Quote</a>
+              <a href="#products" class="btn btn-light">Explore Products</a>
+            </div>
+
+            <div class="hero-metrics">
+              <div class="metric">
+                <strong>1.2K+</strong>
+                <span>Active buyers</span>
+              </div>
+              <div class="metric">
+                <strong>35+</strong>
+                <span>Export markets</span>
+              </div>
+              <div class="metric">
+                <strong>96%</strong>
+                <span>Repeat business</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-card-wrap">
+            <div class="hero-card">
+              <div class="mini-panel">
+                <span class="label">Active shipping lane</span>
+                <strong>Dubai → East Africa</strong>
+                <small>Weekly departures</small>
+              </div>
+
+              <div class="stats-grid">
+                <div class="stat-box">
+                  <span class="num">18k+</span>
+                  <span class="txt">Orders processed</span>
+                </div>
+                <div class="stat-box">
+                  <span class="num">7-12</span>
+                  <span class="txt">Days avg. delivery</span>
+                </div>
+              </div>
+
+              <ul class="feature-list">
+                <li>Verified suppliers and trusted sourcing</li>
+                <li>Customs and documentation support</li>
+                <li>Commercial support across growing markets</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="logos">
+        <div class="container logos-box">
+          <div class="logos-label">Serving trade and business partners in</div>
+          <div class="logo-strip">
+            <span>Kenya</span>
+            <span>Nigeria</span>
+            <span>Ghana</span>
+            <span>Egypt</span>
+            <span>Morocco</span>
+            <span>Senegal</span>
+            <span>UAE</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="container">
+          <div class="section-header">
+            <span class="kicker">Why Barakat</span>
+            <h2>Reliable international trade for growing businesses</h2>
+          </div>
+
+          <div class="about-grid">
+            <div class="info-card">
+              <div class="icon-box">🌍</div>
+              <h3>Global reach</h3>
+              <p>
+                We build trading relationships across key regions to support importers,
+                distributors, and commercial buyers with dependable market access.
+              </p>
+            </div>
+
+            <div class="info-card">
+              <div class="icon-box">📦</div>
+              <h3>Logistics support</h3>
+              <p>
+                From port coordination to inland distribution, we help make every shipment
+                more efficient and more predictable.
+              </p>
+            </div>
+
+            <div class="info-card">
+              <div class="icon-box">🤝</div>
+              <h3>Commercial partnerships</h3>
+              <p>
+                Our team supports long-term B2B relationships with transparent communication,
+                quality control, and trusted business execution.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="products" class="section alt">
+        <div class="container">
+          <div class="section-header">
+            <span class="kicker">Core sectors</span>
+            <h2>Products built for real market demand</h2>
+          </div>
+
+          <div class="product-grid">
+            <article class="product-card">
+              <div class="icon-box">🏭</div>
+              <h3>Industrial Goods</h3>
+              <p>
+                Machinery, metal components, tools, hardware, and performance-focused
+                industrial supplies for modern supply chains.
+              </p>
+            </article>
+
+            <article class="product-card">
+              <div class="icon-box">🌾</div>
+              <h3>Food & Agriculture</h3>
+              <p>
+                Staple food categories, agricultural inputs, and high-demand consumer goods
+                designed for regional distribution.
+              </p>
+            </article>
+
+            <article class="product-card">
+              <div class="icon-box">🧱</div>
+              <h3>Construction Materials</h3>
+              <p>
+                Building essentials, finishing products, cement-related supplies, and
+                infrastructure materials for project needs.
+              </p>
+            </article>
+
+            <article class="product-card">
+              <div class="icon-box">🧴</div>
+              <h3>Consumer Goods</h3>
+              <p>
+                Retail-ready daily products and fast-moving consumer items for markets
+                seeking trusted and scalable supply.
+              </p>
+            </article>
+
+            <article class="product-card">
+              <div class="icon-box">🚚</div>
+              <h3>Logistics</h3>
+              <p>
+                Freight coordination, shipment planning, warehousing support, and dependable
+                movement across key trade corridors.
+              </p>
+            </article>
+
+            <article class="product-card">
+              <div class="icon-box">⚙️</div>
+              <h3>OEM & Sourcing</h3>
+              <p>
+                Supplier matching, private-label sourcing, and product development support
+                for businesses growing their portfolios.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="markets" class="section">
+        <div class="container market-wrap">
+          <div>
+            <div class="section-header" style="text-align:left; margin:0 0 22px;">
+              <span class="kicker">Market access</span>
+              <h2>Strategic trade connections across Africa and beyond</h2>
+            </div>
+            <p>
+              We help businesses expand through high-potential markets with strong demand,
+              practical distribution insight, and reliable commercial execution.
+            </p>
+          </div>
+
+          <div class="market-map">
+            <div class="map-node node-1">North Africa</div>
+            <div class="map-node node-2">West Africa</div>
+            <div class="map-node node-3">East Africa</div>
+            <div class="map-node node-4">Central Africa</div>
+            <div class="map-node node-5">South Africa</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="process" class="section alt">
+        <div class="container">
+          <div class="section-header">
+            <span class="kicker">How we work</span>
+            <h2>Simple process. Strong execution.</h2>
+          </div>
+
+          <div class="process-grid">
+            <div class="step-card">
+              <div class="step-number">01</div>
+              <h3>Assess</h3>
+              <p>We review demand, target markets, required quantities, and sourcing needs.</p>
+            </div>
+
+            <div class="step-card">
+              <div class="step-number">02</div>
+              <h3>Source</h3>
+              <p>We identify trusted suppliers and match the right commercial partners.</p>
+            </div>
+
+            <div class="step-card">
+              <div class="step-number">03</div>
+              <h3>Negotiate</h3>
+              <p>We support pricing, packaging, and order planning with clear communication.</p>
+            </div>
+
+            <div class="step-card">
+              <div class="step-number">04</div>
+              <h3>Deliver</h3>
+              <p>We coordinate shipment execution for faster, more reliable delivery.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="quote" class="section">
+        <div class="container">
+          <div class="section-header">
+            <span class="kicker">Request a quote</span>
+            <h2>Tell us what you need and we’ll respond quickly</h2>
+          </div>
+
+          <div class="quote-wrap">
+            <div class="quote-card">
+              <h3>Trade support that moves business forward</h3>
+              <p>
+                We help buyers and suppliers connect with confidence through clear communication,
+                stable sourcing strategies, and better commercial execution.
+              </p>
+
+              <ul class="quote-list">
+                <li>Supplier and buyer matching</li>
+                <li>Product and market sourcing support</li>
+                <li>Order coordination and shipment planning</li>
+                <li>Responsive B2B communication</li>
+              </ul>
+            </div>
+
+            <form class="quote-card contact-form" id="contactForm">
+              <div class="field">
+                <label for="name">Full Name</label>
+                <input id="name" name="name" type="text" placeholder="Your full name" required />
+              </div>
+
+              <div class="field">
+                <label for="company">Company</label>
+                <input id="company" name="company" type="text" placeholder="Company name" required />
+              </div>
+
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" required />
+              </div>
+
+              <div class="field">
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" placeholder="+905376919007" value="+905376919007" required />
+              </div>
+
+              <div class="field">
+                <label for="category">Product Category</label>
+                <select id="category" name="category" required>
+                  <option value="">Select category</option>
+                  <option>Industrial Goods</option>
+                  <option>Food & Agriculture</option>
+                  <option>Construction Materials</option>
+                  <option>Consumer Goods</option>
+                  <option>Logistics</option>
+                  <option>OEM & Sourcing</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="market">Target Market</label>
+                <select id="market" name="market" required>
+                  <option value="">Select market</option>
+                  <option>Kenya</option>
+                  <option>Nigeria</option>
+                  <option>Ghana</option>
+                  <option>Egypt</option>
+                  <option>Morocco</option>
+                  <option>Senegal</option>
+                  <option>UAE</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="message">Project Details</label>
+                <textarea id="message" name="message" placeholder="Tell us about your products, quantity, or trade requirements"></textarea>
+              </div>
+
+              <button class="btn btn-primary" type="submit">Send Inquiry</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <span class="kicker">Testimonials</span>
+            <h2>Partners trust our trade process</h2>
+          </div>
+
+          <div class="testimonial-grid">
+            <blockquote class="testimonial">
+              “Barakat helped us streamline supplier communication and improve order planning
+              across our regional trade network.”
+              <footer>— Import Manager, Kenya</footer>
+            </blockquote>
+
+            <blockquote class="testimonial">
+              “Professional, responsive, and highly organized. Their B2B support gave our
+              purchasing team much stronger visibility.”
+              <footer>— Procurement Director, Nigeria</footer>
+            </blockquote>
+
+            <blockquote class="testimonial">
+              “From market understanding to execution, they brought a reliable and practical
+              business approach that made a difference.”
+              <footer>— Distribution Partner, Ghana</footer>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container cta-box">
+          <div>
+            <span class="kicker">Ready to grow?</span>
+            <h2>Start sourcing smarter today.</h2>
+          </div>
+          <a href="https://wa.me/905376919007" class="btn btn-primary" target="_blank" rel="noreferrer">
+            WhatsApp Us
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="brand">
+          <span class="brand-mark">B</span>
+          <span class="brand-text">
+            <strong>Barakat</strong>
+            <span>Global Trade</span>
+          </span>
+        </div>
+
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <a href="#products">Products</a>
+          <a href="#markets">Markets</a>
+          <a href="#quote">Quote</a>
+        </div>
+
+        <div class="footer-meta">
+          © <span id="year"></span> Barakat. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <a class="whatsapp-float" href="https://wa.me/905376919007" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+      💬
+    </a>
+
+    <script>
+      const menuToggle = document.getElementById("menuToggle");
+      const navMenu = document.getElementById("navMenu");
+      const year = document.getElementById("year");
+      const form = document.getElementById("contactForm");
+
+      if (year) year.textContent = new Date().getFullYear();
+
+      if (menuToggle && navMenu) {
+        menuToggle.addEventListener("click", () => {
+          navMenu.classList.toggle("open");
+        });
+
+        navMenu.querySelectorAll("a").forEach(link => {
+          link.addEventListener("click", () => navMenu.classList.remove("open"));
+        });
+      }
+
+      if (form) {
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const button = form.querySelector("button[type='submit']");
+          const originalText = button.textContent;
+          button.textContent = "Message Sent";
+          button.disabled = true;
+
+          setTimeout(() => {
+            button.textContent = originalText;
+            button.disabled = false;
+            form.reset();
+          }, 1800);
+        });
+      }
+    </script>
+  </body>
+</html>
